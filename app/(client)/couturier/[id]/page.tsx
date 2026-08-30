@@ -30,8 +30,7 @@ export default async function CouturierProfilePage(props: { params: Promise<{ id
   }
 
   // Fallbacks
-  const profils = Array.isArray(couturier.profils) ? couturier.profils[0] : couturier.profils
-  const quartier = profils?.quartier || 'Quartier non renseigné'
+  const quartier = couturier.profils?.[0]?.quartier || 'Quartier non renseigné'
   
   return (
     <div 

@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -65,8 +64,13 @@ export default function RechercheCouturiers() {
         
         // Note: Le tri par distance réelle (géoloc_atelier JSONB) nécessite PostGIS ou 
         // un calcul côté client avec navigator.geolocation. Pour ce MVP client-side simple,
-        // on triera arbitrairement par la note.
-        const sortedData = (data as unknown as Couturier[] || []).sort((a, b) => b.note_moyenne - a.note_moyenne)
+        // Transform the data so profils is a single object instead of an array
+        const transformedData: Couturier[] = (data || []).map((item: any) => ({
+          ...item,
+          profils: Array.isArray(item.profils) ? item.profils[0] : item.profils
+        }));
+
+        const sortedData = transformedData.sort((a, b) => b.note_moyenne - a.note_moyenne)
         setCouturiers(sortedData)
 
       } catch (err) {

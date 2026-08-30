@@ -15,12 +15,14 @@ export default function InscriptionPage() {
   const [error, setError] = useState('')
   
   const router = useRouter()
-  const supabase = createClient()
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError('')
+
+    // Initialize Supabase only on client-side action to avoid build-time SSR errors
+    const supabase = createClient()
 
     // Assainissement du numéro (ajoute +237 par défaut pour Douala si pas de préfixe)
     let formattedPhone = phone.trim()

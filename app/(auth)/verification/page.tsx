@@ -18,8 +18,6 @@ function VerificationForm() {
   const searchParams = useSearchParams()
   const phone = searchParams.get('phone') || ''
   const role = searchParams.get('role') || 'client'
-  
-  const supabase = createClient()
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,6 +28,9 @@ function VerificationForm() {
 
     setLoading(true)
     setError('')
+    
+    // Initialize Supabase only on client-side action to avoid build-time SSR errors
+    const supabase = createClient()
 
     try {
       const { data, error } = await supabase.auth.verifyOtp({

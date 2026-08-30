@@ -89,7 +89,7 @@ export default function AdminParametresPage() {
                 </CardContent>
               </Card>
             ))}
-            <Button variant="dashed" className="h-full min-h-[200px] rounded-3xl border-2 border-dashed border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors flex flex-col gap-2">
+            <Button variant="outline" className="h-full min-h-[200px] rounded-3xl border-2 border-dashed border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors flex flex-col gap-2">
               <Globe className="w-8 h-8" />
               Ouvrir une nouvelle zone
             </Button>

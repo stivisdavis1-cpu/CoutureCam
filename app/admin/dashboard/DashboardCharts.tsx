@@ -46,7 +46,7 @@ export default function DashboardCharts() {
               />
               <Tooltip 
                 contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
-                formatter={(value: number) => [`${value.toLocaleString()} FCFA`, 'GMV']}
+                formatter={(value: any) => [`${value.toLocaleString()} FCFA`, 'GMV']}
               />
               <Line type="monotone" dataKey="gmv" stroke="#C9A84C" strokeWidth={4} dot={{ r: 4, fill: '#C9A84C', strokeWidth: 2, stroke: '#fff' }} activeDot={{ r: 6, fill: '#1B2A4A', stroke: '#fff' }} />
             </LineChart>

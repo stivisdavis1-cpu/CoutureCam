@@ -65,7 +65,7 @@ export default function RechercheCouturiers() {
         // Note: Le tri par distance réelle (géoloc_atelier JSONB) nécessite PostGIS ou 
         // un calcul côté client avec navigator.geolocation. Pour ce MVP client-side simple,
         // on triera arbitrairement par la note.
-        const sortedData = (data as Couturier[] || []).sort((a, b) => b.note_moyenne - a.note_moyenne)
+        const sortedData = (data as unknown as Couturier[] || []).sort((a, b) => b.note_moyenne - a.note_moyenne)
         setCouturiers(sortedData)
 
       } catch (err) {

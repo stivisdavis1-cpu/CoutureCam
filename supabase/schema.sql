@@ -286,7 +286,22 @@ SELECT
 FROM public.litiges;
 
 -- =========================================
--- 8. MARKETING & ACQUISITION
+-- 8. FAVORIS (Clients -> Couturiers)
+-- =========================================
+
+CREATE TABLE public.favoris (
+  client_id UUID REFERENCES public.profils(id) ON DELETE CASCADE NOT NULL,
+  couturier_id UUID REFERENCES public.couturiers(id) ON DELETE CASCADE NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+  PRIMARY KEY (client_id, couturier_id)
+);
+
+ALTER TABLE public.favoris ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Clients gèrent leurs favoris" ON public.favoris FOR ALL USING (auth.uid() = client_id);
+CREATE POLICY "Lecture publique favoris pour compte des stats" ON public.favoris FOR SELECT USING (true);
+
+-- =========================================
+-- 9. MARKETING & ACQUISITION
 -- =========================================
 
 CREATE TYPE role_interet AS ENUM ('client', 'couturier');

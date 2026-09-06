@@ -43,7 +43,22 @@ function VerificationForm() {
         throw error
       }
 
-      // TODO: Insérer l'utilisateur dans la table `profils` avec son rôle s'il n'existe pas déjà
+      // Création du profil utilisateur s'il n'existe pas déjà
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        const { error: profileError } = await supabase
+          .from('profils')
+          .upsert({
+            id: user.id,
+            telephone: phone,
+            role: role
+          }, { onConflict: 'id' })
+
+        if (profileError) {
+          console.error("Erreur lors de la création du profil:", profileError)
+        }
+      }
+
       // Pour l'instant, on redirige vers l'accueil ou le dashboard
       if (role === 'couturier') {
         router.push('/couturier/dashboard')

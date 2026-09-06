@@ -13,10 +13,10 @@ export default async function AdminLitigePage(props: { params: Promise<{ id: str
   // Requête complexe pour reconstituer l'historique : litiges, etapes, messages
   // On mock l'historique pour la vue UI
   const mockHistorique = [
-    { type: 'etape', date: new Date(Date.now() - 300000000).toISOString(), desc: 'Prise de mesures validée', acteur: 'Client' },
-    { type: 'etape', date: new Date(Date.now() - 200000000).toISOString(), desc: 'Choix du tissu', acteur: 'Couturier', photo: true },
-    { type: 'message', date: new Date(Date.now() - 100000000).toISOString(), desc: 'Le tissu ne correspond pas à ce qu\'on a dit', acteur: 'Client' },
-    { type: 'litige_ouvert', date: new Date(Date.now() - 50000000).toISOString(), desc: 'Ouverture du litige', acteur: 'Client' }
+    { type: 'etape', date: '2026-09-02T10:00:00.000Z', desc: 'Prise de mesures validée', acteur: 'Client' },
+    { type: 'etape', date: '2026-09-03T10:00:00.000Z', desc: 'Choix du tissu', acteur: 'Couturier', photo: true },
+    { type: 'message', date: '2026-09-04T10:00:00.000Z', desc: 'Le tissu ne correspond pas à ce qu\'on a dit', acteur: 'Client' },
+    { type: 'litige_ouvert', date: '2026-09-05T10:00:00.000Z', desc: 'Ouverture du litige', acteur: 'Client' }
   ]
 
   const litigeId = params.id

@@ -11,10 +11,10 @@ export default async function AdminFinancePage() {
 
   // Mock data for Escrow / Finance
   const mockTransactions = [
-    { id: 'TRX-1095', type: 'sequestre_entrant', amount: 45000, date: new Date().toISOString(), status: 'bloque', client: 'Alice M.', couturier: 'Sape Elite' },
-    { id: 'TRX-1094', type: 'payout_couturier', amount: 22500, date: new Date(Date.now() - 3600000).toISOString(), status: 'complete', client: 'Jean T.', couturier: 'Couture Express' },
-    { id: 'TRX-1093', type: 'commission_plateforme', amount: 2500, date: new Date(Date.now() - 3600000).toISOString(), status: 'complete', client: '-', couturier: '-' },
-    { id: 'TRX-1092', type: 'remboursement_client', amount: 15000, date: new Date(Date.now() - 86400000).toISOString(), status: 'complete', client: 'Sophie K.', couturier: 'Mode Wax' },
+    { id: 'TRX-1095', type: 'acompte_client', amount: 15000, date: '2026-09-06T10:00:00.000Z', status: 'complete', client: 'Alice M.', couturier: 'Couture Elegance' },
+    { id: 'TRX-1094', type: 'payout_couturier', amount: 22500, date: '2026-09-06T09:00:00.000Z', status: 'complete', client: 'Jean T.', couturier: 'Couture Express' },
+    { id: 'TRX-1093', type: 'commission_plateforme', amount: 2500, date: '2026-09-06T09:00:00.000Z', status: 'complete', client: '-', couturier: '-' },
+    { id: 'TRX-1092', type: 'remboursement_client', amount: 15000, date: '2026-09-05T10:00:00.000Z', status: 'complete', client: 'Sophie K.', couturier: 'Mode Wax' },
   ]
 
   return (

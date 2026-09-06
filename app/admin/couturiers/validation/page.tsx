@@ -29,7 +29,7 @@ export default async function AdminValidationCouturiers() {
       nom_atelier: 'Sape Elite',
       quartier: 'Bali',
       statut_verification: 'pret',
-      created_at: new Date(Date.now() - 86400000).toISOString()
+      created_at: '2026-09-05T10:00:00.000Z'
     }
   ]
 

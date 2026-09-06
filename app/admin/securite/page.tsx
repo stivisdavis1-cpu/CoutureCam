@@ -13,9 +13,9 @@ export default function AdminSecuritePage() {
 
   // Mock data Audit Log
   const mockAuditLogs = [
-    { id: 'log_901', acteur: 'admin_1', role: 'admin', action: 'activer_couturier', cible: 'usr_c12', ip: '102.134.12.5', date: new Date().toISOString() },
-    { id: 'log_902', acteur: 'admin_2', role: 'finance', action: 'valider_payout', cible: 'trx_1094', ip: '197.234.45.6', date: new Date(Date.now() - 3600000).toISOString() },
-    { id: 'log_903', acteur: 'admin_1', role: 'admin', action: 'bannir_utilisateur', cible: 'usr_c08', ip: '102.134.12.5', date: new Date(Date.now() - 86400000).toISOString() },
+    { id: 'log_901', acteur: 'admin_1', role: 'admin', action: 'activer_couturier', cible: 'usr_c12', ip: '102.134.12.5', date: '2026-09-06T10:00:00.000Z' },
+    { id: 'log_902', acteur: 'admin_2', role: 'finance', action: 'valider_payout', cible: 'trx_1094', ip: '197.234.45.6', date: '2026-09-06T09:00:00.000Z' },
+    { id: 'log_903', acteur: 'admin_1', role: 'admin', action: 'bannir_utilisateur', cible: 'usr_c08', ip: '102.134.12.5', date: '2026-09-05T10:00:00.000Z' },
   ]
 
   // Mock data Roles
